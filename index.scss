@@ -1,0 +1,307 @@
+*{
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+ul,li{
+   list-style: none;
+}
+$d-width:320px,360px,375px,412px,414px;
+html{
+    font-size: 100px;
+}
+body{
+    font-size: 16px;
+    background-image:url(img/bg.jpg) ;
+}
+$design-width:480px;
+@each $w in $d-width{
+    @media screen and (min-width:#{$w}){
+        html{
+            font-size: 100px * $w/$design-width;
+        }
+    }
+}
+
+@mixin w-h($width,$height){
+   width:$width;
+   height: $height;
+}
+
+
+
+//头部
+.header{
+   @include w-h(100%,0.65rem);
+   background: #835d3b;
+   
+   div{
+     font-size: 26px;
+     line-height: 0.65rem;
+     color: #fff;
+     float:left;
+   }
+  .empty{
+     font-size: 22px;
+     padding:0 0.4rem; 
+  }
+  .them{
+     padding-left:0.68rem;
+  }
+
+}
+
+//内容部分
+.contain{
+   @include w-h(100%,6.97rem);
+// background:#f1ca93;
+// position:relative;
+   .todolist{
+      padding-top:0.23rem ;
+      padding-left: 0.32rem; 
+//    overflow: scroll;
+//    padding-right: 0.32rem; 
+      li.on{
+          @include w-h(1.8rem,1.8rem);
+          background-image: url(img/sbg.jpg);
+          box-shadow: 2px 3px 3px #333;
+          float: left;
+          margin-right: 0.5rem;
+          margin-bottom: 0.42rem;
+          position: relative;
+          padding: 0 0.1rem;
+          padding-top: 0.34rem;
+          box-sizing: border-box;
+          #zi{
+               @include w-h(100%,100%);
+               background: none;
+               border:none;
+               font-size: 0.2rem;
+               color: #505050;
+               font-weight: 400;
+               font-family: "微软雅黑";
+               resize: none;
+
+               
+             }
+          .delete{
+              background: #999999;
+              border-radius: 50%;
+              font-size: 0.4rem;
+              text-align: center;
+              line-height: 0.4rem;
+              position: absolute;
+              right:-0.14rem;
+              top:-0.18rem;
+              display: none;
+          }
+          .ding{
+               font-size: 0.4rem;
+               position: absolute;
+               left: -0.14rem;
+               top:-0.14rem;
+               color: #479dc7;
+          }
+      }
+      li.done{
+          @include w-h(1.8rem,1.8rem);
+          background-image: url(img/sbg.jpg);
+          box-shadow: 2px 3px 3px #333333;
+          float: left;
+          margin-right: 0.5rem;
+          margin-bottom: 0.42rem;
+          position: relative;
+//        padding: 0 0.1rem;
+//        padding-top: 0.34rem;
+//        box-sizing: border-box;
+          #zi{
+               @include w-h(100%,100%);
+               background: none;
+               border:none;
+               font-size: 0.2rem;
+               color: #999999;
+               font-family: "微软雅黑";
+               resize: none;
+               padding: 0 0.1rem;
+               padding-top: 0.3rem;
+               text-decoration: line-through;
+           }
+          .delete{
+              background: #999999;
+              border-radius: 50%;
+              font-size: 0.4rem;
+              text-align: center;
+              line-height: 0.4rem;
+              position: absolute;
+              right:-0.14rem;
+              top:-0.18rem;
+              display: block;
+              
+          }
+          .ding{
+               font-size: 0.4rem;
+               position: absolute;
+               left: -0.14rem;
+               top:-0.14rem;
+               color: #479dc7;
+          }
+      }
+      li:nth-child(2n+2){
+          margin-right: 0;
+          
+      }
+      
+   }
+   .add{
+        @include w-h(0.81rem,0.81rem);
+        background: #644024;
+        position:fixed;
+        right:36px;
+        bottom:38px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 0.81rem;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bolder;
+        z-index: 9999;
+        opacity: 0;
+        animation: add 1s ease forwards;
+  }
+  
+}
+
+
+//背景及添加内容部分
+.bd{
+   @include w-h(95%,7.62rem);
+// background:#f1ca93;
+// position:relative;
+   padding-top: 0.15rem;
+   padding-left: 0.11rem;
+   padding-right: 0.11rem;
+   position: relative;
+   position: absolute;
+   display: none;
+   z-index:100 ;
+   top:0;
+   left: 0;
+   
+  .bg_top{
+     @include w-h(100%,0.58rem);
+     background-color:#78736a;
+     border:1px solid #73644d;
+     border-bottom:none;
+     box-sizing: border-box;
+     text-align: center;
+     background-image: url(img/fang.png);
+     background-repeat: no-repeat;
+     background-position: 96% 0.08rem;
+     img{
+        @include w-h(0.3rem,0.3rem); 
+        position: absolute;
+        top:0.3rem;
+        left: 0.3rem;
+     }
+     span{
+         font-size: 0.26rem;
+         color: #fff;
+         
+         line-height: 0.58rem;
+         font-family: "苹方";
+         font-weight: 600;
+     }
+    }
+   #text{
+     padding: 0.2rem;
+     @include w-h(100%,7rem);
+     overflow: hidden;
+     background-image: url(img/bbg.jpg);
+     border:none;
+     resize: none;
+     font-size: 28px;
+     color: #333333;
+     box-sizing: border-box;
+     
+   }
+   .ok{
+       @include w-h(0.56rem,0.56rem);
+       background: #4c4947;
+       font-size: 0.34rem;
+//     color: #34302d;
+       text-align: center;
+       line-height: 0.56rem;
+       border-radius:50%;
+       position: absolute;
+       bottom:0.34rem;
+       right:0.3rem;
+   }
+
+}
+
+@keyframes add{
+    0%{
+       transform: translateY(100%); 
+       opacity: 0;
+    }
+    50%{
+        transform: translateY(2rem); 
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0.01rem); 
+        opacity: 1;
+    }
+}
+
+
+.footer{
+    width: 100%;
+    height: 0.5rem;
+    position: fixed;
+    left:0;
+    bottom:0;
+    animation: foot 1s ease forwards;
+    div{
+        width: 33%;
+        height: 0.5rem;
+        text-align: center;
+        line-height: 0.5rem;
+        color: #fff;
+        border-right: 1px solid #4D4D4D;
+        box-sizing: border-box;
+        float: left;
+    }
+    .wei{
+        border: none;
+    }
+    .active{
+        color: #AF5B5E;
+    }
+}
+
+
+@keyframes foot{
+    0%{
+       transform: translateY(100%); 
+       opacity: 0;
+    }
+    100%{
+        transform: translateY(0.01rem); 
+        opacity: 1;
+    }
+}
+
+@keyframes ani{
+    0%{
+       transform: translateX(1rem); 
+       opacity: 1;
+    }
+    100%{
+        transform: translateX(100%); 
+        opacity: 0;
+    }
+}
+.ani{
+    animation: ani 1s linear forwards;
+}

@@ -1,0 +1,259 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+ul, li {
+  list-style: none; }
+
+html {
+  font-size: 100px; }
+
+body {
+  font-size: 16px;
+  background-image: url(img/bg.jpg); }
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 66.66667px; } }
+
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 75px; } }
+
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 78.125px; } }
+
+@media screen and (min-width: 412px) {
+  html {
+    font-size: 85.83333px; } }
+
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 86.25px; } }
+
+.header {
+  width: 100%;
+  height: 0.65rem;
+  background: #835d3b; }
+  .header div {
+    font-size: 26px;
+    line-height: 0.65rem;
+    color: #fff;
+    float: left; }
+  .header .empty {
+    font-size: 22px;
+    padding: 0 0.4rem; }
+  .header .them {
+    padding-left: 0.68rem; }
+
+.contain {
+  width: 100%;
+  height: 6.97rem; }
+  .contain .todolist {
+    padding-top: 0.23rem;
+    padding-left: 0.32rem; }
+    .contain .todolist li.on {
+      width: 1.8rem;
+      height: 1.8rem;
+      background-image: url(img/sbg.jpg);
+      box-shadow: 2px 3px 3px #333;
+      float: left;
+      margin-right: 0.5rem;
+      margin-bottom: 0.42rem;
+      position: relative;
+      padding: 0 0.1rem;
+      padding-top: 0.34rem;
+      box-sizing: border-box; }
+      .contain .todolist li.on #zi {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border: none;
+        font-size: 0.2rem;
+        color: #505050;
+        font-weight: 400;
+        font-family: "微软雅黑";
+        resize: none; }
+      .contain .todolist li.on .delete {
+        background: #999999;
+        border-radius: 50%;
+        font-size: 0.4rem;
+        text-align: center;
+        line-height: 0.4rem;
+        position: absolute;
+        right: -0.14rem;
+        top: -0.18rem;
+        display: none; }
+      .contain .todolist li.on .ding {
+        font-size: 0.4rem;
+        position: absolute;
+        left: -0.14rem;
+        top: -0.14rem;
+        color: #479dc7; }
+    .contain .todolist li.done {
+      width: 1.8rem;
+      height: 1.8rem;
+      background-image: url(img/sbg.jpg);
+      box-shadow: 2px 3px 3px #333333;
+      float: left;
+      margin-right: 0.5rem;
+      margin-bottom: 0.42rem;
+      position: relative; }
+      .contain .todolist li.done #zi {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border: none;
+        font-size: 0.2rem;
+        color: #999999;
+        font-family: "微软雅黑";
+        resize: none;
+        padding: 0 0.1rem;
+        padding-top: 0.3rem;
+        text-decoration: line-through; }
+      .contain .todolist li.done .delete {
+        background: #999999;
+        border-radius: 50%;
+        font-size: 0.4rem;
+        text-align: center;
+        line-height: 0.4rem;
+        position: absolute;
+        right: -0.14rem;
+        top: -0.18rem;
+        display: block; }
+      .contain .todolist li.done .ding {
+        font-size: 0.4rem;
+        position: absolute;
+        left: -0.14rem;
+        top: -0.14rem;
+        color: #479dc7; }
+    .contain .todolist li:nth-child(2n+2) {
+      margin-right: 0; }
+  .contain .add {
+    width: 0.81rem;
+    height: 0.81rem;
+    background: #644024;
+    position: fixed;
+    right: 36px;
+    bottom: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 0.81rem;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bolder;
+    z-index: 9999;
+    opacity: 0;
+    animation: add 1s ease forwards; }
+
+.bd {
+  width: 95%;
+  height: 7.62rem;
+  padding-top: 0.15rem;
+  padding-left: 0.11rem;
+  padding-right: 0.11rem;
+  position: relative;
+  position: absolute;
+  display: none;
+  z-index: 100;
+  top: 0;
+  left: 0; }
+  .bd .bg_top {
+    width: 100%;
+    height: 0.58rem;
+    background-color: #78736a;
+    border: 1px solid #73644d;
+    border-bottom: none;
+    box-sizing: border-box;
+    text-align: center;
+    background-image: url(img/fang.png);
+    background-repeat: no-repeat;
+    background-position: 96% 0.08rem; }
+    .bd .bg_top img {
+      width: 0.3rem;
+      height: 0.3rem;
+      position: absolute;
+      top: 0.3rem;
+      left: 0.3rem; }
+    .bd .bg_top span {
+      font-size: 0.26rem;
+      color: #fff;
+      line-height: 0.58rem;
+      font-family: "苹方";
+      font-weight: 600; }
+  .bd #text {
+    padding: 0.2rem;
+    width: 100%;
+    height: 7rem;
+    overflow: hidden;
+    background-image: url(img/bbg.jpg);
+    border: none;
+    resize: none;
+    font-size: 28px;
+    color: #333333;
+    box-sizing: border-box; }
+  .bd .ok {
+    width: 0.56rem;
+    height: 0.56rem;
+    background: #4c4947;
+    font-size: 0.34rem;
+    text-align: center;
+    line-height: 0.56rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0.34rem;
+    right: 0.3rem; }
+
+@keyframes add {
+  0% {
+    transform: translateY(100%);
+    opacity: 0; }
+  50% {
+    transform: translateY(2rem);
+    opacity: 1; }
+  100% {
+    transform: translateY(0.01rem);
+    opacity: 1; } }
+
+.footer {
+  width: 100%;
+  height: 0.5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  animation: foot 1s ease forwards; }
+  .footer div {
+    width: 33%;
+    height: 0.5rem;
+    text-align: center;
+    line-height: 0.5rem;
+    color: #fff;
+    border-right: 1px solid #4D4D4D;
+    box-sizing: border-box;
+    float: left; }
+  .footer .wei {
+    border: none; }
+  .footer .active {
+    color: #AF5B5E; }
+
+@keyframes foot {
+  0% {
+    transform: translateY(100%);
+    opacity: 0; }
+  100% {
+    transform: translateY(0.01rem);
+    opacity: 1; } }
+
+@keyframes ani {
+  0% {
+    transform: translateX(1rem);
+    opacity: 1; }
+  100% {
+    transform: translateX(100%);
+    opacity: 0; } }
+
+.ani {
+  animation: ani 1s linear forwards; }
