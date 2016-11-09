@@ -68,8 +68,19 @@ $(function(){
 	
 	//清空
 	empty.on("touchend",function(){
-		localStorage.x='';
-		ul.remove();
+	   var newarr=[];
+   	   for(var i=0;i<todos.length;i++)
+   	   {
+   	   	 if(todos[i].state!==1)
+   	   	 {
+   	   	 	newarr.push(todos[i]);
+   	   	 	console.log(todos[i]);
+   	   	 	
+   	   	 }
+   	   }
+   	   
+   	    localStorage.x=JSON.stringify(newarr);
+   	    $("li.done").remove();
 	})
 	
 	//触摸事件
@@ -126,7 +137,7 @@ $(function(){
     	$(".done").hide();
     })
     
-    //返回事件
+      返回事件
     tu.on("touchend",function(){
     	add.css("display","block");
 		header.css("display","block");
